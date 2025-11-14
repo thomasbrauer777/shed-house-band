@@ -214,7 +214,7 @@
     <section id="kontakt" class="wrap contact">
       <h2 class="section-title">Kontakt &amp; Booking</h2>
       <div class="card">
-        <form class="grid" onsubmit="sendMail(event)">
+        <form class="grid" onsubmit="sendMail(event)" action="mailto:kontakt@shadhouseband.ch" method="POST" enctype="text/plain">
           <div class="row">
             <div>
               <label for="name">Name</label>
@@ -324,11 +324,13 @@
 
     // ---- Dummy-Mailversand (lokal) ----
     function sendMail(e) {
-      e.preventDefault();
-      const status = document.getElementById('form-status');
-      status.textContent = 'Danke! Wir melden uns in Kürze.';
-      e.target.reset();
-    }
+  e.preventDefault();
+  window.location.href = "mailto:kontakt@shadhouseband.ch"
+    + "?subject=Band%20Anfrage"
+    + "&body=Name:%20" + encodeURIComponent(document.getElementById('name').value)
+    + "%0AEmail:%20" + encodeURIComponent(document.getElementById('email').value)
+    + "%0ANachricht:%0A" + encodeURIComponent(document.getElementById('message').value);
+}
   </script>
 </body>
 </html>

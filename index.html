@@ -36,8 +36,14 @@
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+
     .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-    header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: linear-gradient(to bottom, rgba(15,10,7,.85), rgba(15,10,7,.55)); border-bottom: 1px solid rgba(255,255,255,.06); }
+
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(15,10,7,.85), rgba(15,10,7,.55));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
     .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .5px; }
     .brand .logo { width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
@@ -48,22 +54,42 @@
     .hero img.hero-logo { max-width: 420px; width: 80%; height: auto; display: block; margin: 0 auto 16px; filter: drop-shadow(0 10px 30px rgba(0,0,0,.5)); }
     .hero h1 { font-size: clamp(36px, 5vw, 64px); margin: 0 0 10px; }
     .hero p { color: var(--muted); margin: 0 auto 24px; max-width: 700px; }
-    .cta { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #1a120d; font-weight: 700; box-shadow: var(--shadow); border: 0; cursor: pointer; }
+    .cta {
+      display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px;
+      border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #1a120d; font-weight: 700; box-shadow: var(--shadow); border: 0; cursor: pointer;
+    }
     .cta:hover { filter: brightness(1.05); }
 
     /* Sections */
     section { padding: 60px 0; }
     .section-title { font-size: clamp(22px, 3.5vw, 32px); margin-bottom: 18px; }
-    .card { background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.06); border-radius: 16px; box-shadow: var(--shadow); }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
 
     /* Grid */
     .grid { display: grid; gap: 18px; }
-    @media (min-width: 800px) { .grid.cols-2 { grid-template-columns: 1fr 1fr; } .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 800px) {
+      .grid.cols-2 { grid-template-columns: 1fr 1fr; }
+      .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    }
 
     /* About */
     .about { display: grid; gap: 20px; grid-template-columns: 1fr; }
-    @media (min-width: 900px) { .about { grid-template-columns: 1.2fr .8fr; align-items: center; } }
-    .about .img { aspect-ratio: 4/3; border-radius: 16px; background: url('media/rehearsal-01.jpg') center/cover; border: 1px solid rgba(255,255,255,.1); box-shadow: var(--shadow); }
+    @media (min-width: 900px) {
+      .about { grid-template-columns: 1.2fr .8fr; align-items: center; }
+    }
+    .about .img {
+      aspect-ratio: 4/3;
+      border-radius: 16px;
+      background: url('media/rehearsal-01.jpg') center/cover;
+      border: 1px solid rgba(255,255,255,.1);
+      box-shadow: var(--shadow);
+    }
     .about p { color: var(--muted); }
 
     /* Music embeds */
@@ -74,42 +100,83 @@
     .shows table { width: 100%; border-collapse: collapse; }
     .shows th, .shows td { text-align: left; padding: 12px; border-bottom: 1px solid rgba(255,255,255,.08); }
     .shows tr:hover { background: rgba(255,255,255,.03); }
-    .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; background: rgba(217,119,6,.18); color: #f3e9dc; font-size: 12px; border: 1px solid rgba(217,119,6,.35); }
+    .badge {
+      display: inline-block; padding: 4px 10px; border-radius: 999px;
+      background: rgba(217,119,6,.18); color: #f3e9dc; font-size: 12px;
+      border: 1px solid rgba(217,119,6,.35);
+    }
 
     /* Gallery */
     .gallery { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-    .gallery a img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); transition: transform .2s; }
+    .gallery a img {
+      width: 100%; height: 180px; object-fit: cover;
+      border-radius: 12px; border: 1px solid rgba(255,255,255,.08);
+      transition: transform .2s;
+    }
     .gallery a:hover img { transform: scale(1.05); }
 
     /* Lightbox (JS gesteuert) */
-    .lightbox-overlay { display:none; position:fixed; inset:0; z-index:999; background:rgba(0,0,0,.92); align-items:center; justify-content:center; padding:24px; }
+    .lightbox-overlay {
+      display:none; position:fixed; inset:0; z-index:999;
+      background:rgba(0,0,0,.92); align-items:center; justify-content:center; padding:24px;
+    }
     .lightbox-overlay.active { display:flex; }
     .lightbox-img { max-width:92vw; max-height:92vh; border-radius:10px; box-shadow: var(--shadow); }
-    .lightbox-btn { position:fixed; top:50%; transform:translateY(-50%); background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.2); color:#fff; font-size:26px; line-height:1; padding:10px 14px; border-radius:10px; cursor:pointer; user-select:none; }
+    .lightbox-btn {
+      position:fixed; top:50%; transform:translateY(-50%);
+      background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.2);
+      color:#fff; font-size:26px; line-height:1; padding:10px 14px;
+      border-radius:10px; cursor:pointer; user-select:none;
+    }
     .lightbox-btn:hover{ background:rgba(0,0,0,.55); }
     .lightbox-prev{ left:20px; }
     .lightbox-next{ right:20px; }
-    .lightbox-close{ position:fixed; top:18px; right:22px; font-size:34px; color:#fff; text-decoration:none; opacity:.85; }
-    .lightbox-counter{ position:fixed; bottom:18px; left:50%; transform:translateX(-50%); color:#fff; font-size:14px; opacity:.85; }
+    .lightbox-close{
+      position:fixed; top:18px; right:22px;
+      font-size:34px; color:#fff; text-decoration:none; opacity:.85;
+    }
+    .lightbox-counter{
+      position:fixed; bottom:18px; left:50%; transform:translateX(-50%);
+      color:#fff; font-size:14px; opacity:.85;
+    }
 
     /* Contact */
     .contact .card { padding: 18px; }
     .row { display: grid; gap: 12px; grid-template-columns: 1fr; }
     @media (min-width: 700px) { .row { grid-template-columns: 1fr 1fr; } }
-    input, textarea { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.12); background: #15100c; color: var(--text); outline: none; }
-    input:focus, textarea:focus { border-color: var(--ring); box-shadow: 0 0 0 4px rgba(217,119,6,.15); }
+    input, textarea {
+      width: 100%; padding: 12px 14px; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: #15100c; color: var(--text); outline: none;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--ring);
+      box-shadow: 0 0 0 4px rgba(217,119,6,.15);
+    }
     label { font-size: 14px; color: var(--muted); }
 
-    footer { color: var(--muted); border-top: 1px solid rgba(255,255,255,.06); padding: 30px 0 60px; text-align: center; }
-    .socials { display: inline-flex; gap: 12px; align-items: center; }
-    .socials a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); }
+    footer {
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 30px 0 60px;
+      text-align: center;
+    }
+    .socials { display: inline-flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center; }
+    .socials a {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+    }
     .p-16 { padding: 16px; }
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
-      <div class="brand"><div class="logo" aria-hidden="true"></div><span>Shed House Band</span></div>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Shed House Band</span>
+      </div>
       <nav aria-label="Hauptnavigation">
         <ul>
           <li><a href="#musik">Musik</a></li>
@@ -147,7 +214,7 @@
     <section class="wrap" id="band">
       <h2 class="section-title">Mitglieder</h2>
       <div class="grid cols-3">
-        <div class="card p-16"><strong>Bernhard</strong><br><span style="color:var(--muted)">Piano + Hammond</span></div>
+        <div class="card p-16"><strong>Bernhard</strong><br><span style="color:var(--muted)">Piano &amp; Hammond</span></div>
         <div class="card p-16"><strong>Peter</strong><br><span style="color:var(--muted)">Bass</span></div>
         <div class="card p-16"><strong>Mi</strong><br><span style="color:var(--muted)">Schlagzeug</span></div>
         <div class="card p-16"><strong>Patrick</strong><br><span style="color:var(--muted)">Gitarre</span></div>
@@ -161,7 +228,12 @@
       <h2 class="section-title">Musik</h2>
       <div class="embeds">
         <div class="embed card">
-          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/70eXlibWuS7YEKNHgUdSlM?utm_source=generator" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify"></iframe>
+          <iframe
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/70eXlibWuS7YEKNHgUdSlM?utm_source=generator"
+            width="100%" height="352" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy" title="Spotify Playlist Shed House Band"></iframe>
         </div>
       </div>
     </section>
@@ -181,7 +253,9 @@
           </thead>
           <tbody id="shows-body">
             <tr>
-              <td colspan="4" style="text-align:center; color:var(--muted); padding:22px;">Aktuell keine Termine. Neue Shows werden hier veröffentlicht.</td>
+              <td colspan="4" style="text-align:center; color:var(--muted); padding:22px;">
+                Aktuell keine Termine. Neue Shows werden hier veröffentlicht.
+              </td>
             </tr>
           </tbody>
         </table>
@@ -214,14 +288,18 @@
     <section id="kontakt" class="wrap contact">
       <h2 class="section-title">Kontakt &amp; Booking</h2>
       <div class="card">
-        <form class="grid" onsubmit="sendMail(event)" action="mailto:kontakt@shadhouseband.ch" method="POST" enctype="text/plain">
+        <form
+          class="grid"
+          action="https://formspree.io/f/xdkywngp"
+          method="POST"
+        >
           <div class="row">
             <div>
               <label for="name">Name</label>
               <input id="name" name="name" required />
             </div>
             <div>
-              <label for="email">E‑Mail</label>
+              <label for="email">E-Mail</label>
               <input id="email" name="email" type="email" required />
             </div>
           </div>
@@ -229,11 +307,18 @@
             <label for="message">Nachricht</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
+
+          <!-- optional: subject für Formspree -->
+          <input type="hidden" name="_subject" value="Neue Booking-Anfrage über shedhouseband.ch" />
+
           <div>
             <button class="cta" type="submit">Anfragen</button>
-            <span id="form-status" style="margin-left:10px;color:var(--muted)"></span>
           </div>
         </form>
+        <p style="margin-top:12px; color:var(--muted);">
+          Oder direkt per Mail:
+          <a href="mailto:kontakt@shedhouseband.ch">kontakt@shedhouseband.ch</a>
+        </p>
       </div>
     </section>
   </main>
@@ -244,7 +329,7 @@
         <a href="https://instagram.com" rel="noopener" target="_blank">Instagram</a>
         <a href="https://youtube.com" rel="noopener" target="_blank">YouTube</a>
         <a href="https://open.spotify.com" rel="noopener" target="_blank">Spotify</a>
-        <a href="mailto:kontakt@shedhouseband.ch">E‑Mail</a>
+        <a href="mailto:kontakt@shedhouseband.ch">kontakt@shedhouseband.ch</a>
       </div>
       <p style="margin-top:14px">© <span id="year"></span> Shed House Band • Alle Rechte vorbehalten.</p>
     </div>
@@ -321,16 +406,6 @@
       if(e.key === 'ArrowLeft') prevLB();
       if(e.key === 'ArrowRight') nextLB();
     });
-
-    // ---- Dummy-Mailversand (lokal) ----
-    function sendMail(e) {
-  e.preventDefault();
-  window.location.href = "mailto:kontakt@shadhouseband.ch"
-    + "?subject=Band%20Anfrage"
-    + "&body=Name:%20" + encodeURIComponent(document.getElementById('name').value)
-    + "%0AEmail:%20" + encodeURIComponent(document.getElementById('email').value)
-    + "%0ANachricht:%0A" + encodeURIComponent(document.getElementById('message').value);
-}
   </script>
 </body>
 </html>

@@ -92,11 +92,9 @@
     }
     .about p { color: var(--muted); }
 
-    /* Music embeds */
-    .embeds { display: grid; gap: 18px; }
-    .embed { overflow: hidden; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: #15100c; }
-    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    /* Setliste Links */
+    .setlist-link { color: var(--text); transition: color 0.2s; }
+    .setlist-link:hover { color: var(--accent); text-decoration: none; }
 
     /* Shows */
     .shows table { width: 100%; border-collapse: collapse; }
@@ -181,9 +179,8 @@
       </div>
       <nav aria-label="Hauptnavigation">
         <ul>
-          <li><a href="#musik">Musik</a></li>
-          <li><a href="#band">Band</a></li>
           <li><a href="#setliste">Set-Liste</a></li>
+          <li><a href="#band">Band</a></li>
           <li><a href="#termine">Termine</a></li>
           <li><a href="#galerie">Galerie</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
@@ -197,8 +194,8 @@
     <section class="hero wrap">
       <img class="hero-logo" src="media/logo-shed-house-band.jpg" alt="Shed House Band Logo" />
       <h1>Shed House Band</h1>
-      <p>Blues • Soul • Funk – handgemacht aus der Ostschweiz. Songs, anstehende Shows und Kontakt für Booking.</p>
-      <button class="cta" onclick="document.getElementById('musik').scrollIntoView({behavior:'smooth'})">Jetzt reinhören ▸</button>
+      <p>Blues • Soul • Funk – handgemacht aus der Ostschweiz. Repertoire, anstehende Shows und Kontakt für Booking.</p>
+      <button class="cta" onclick="document.getElementById('setliste').scrollIntoView({behavior:'smooth'})">Zur Set-Liste ▸</button>
     </section>
 
     <!-- ABOUT -->
@@ -229,12 +226,13 @@
     <!-- SETLISTE -->
     <section class="wrap" id="setliste">
       <h2 class="section-title">Set-Liste (Auszug)</h2>
+      <p style="color: var(--muted); margin-top: -10px; margin-bottom: 20px; font-size: 14px;">Klicke auf die Titel, um die Songs direkt auf YouTube anzuhören.</p>
       <div class="card p-16">
         <div class="grid cols-2" style="gap: 10px 40px; color: var(--muted); font-size: 16px;">
           <div>
             <ul style="list-style: '▸ '; padding-left: 15px; margin: 0;">
-              <li style="margin-bottom: 8px;"><strong style="color: var(--text)">Mustang Sally</strong> <span style="font-size: 14px; font-style: italic;">(Wilson Pickett)</span></li>
-              <li style="margin-bottom: 8px;"><strong style="color: var(--text)">One Step Forward</strong> <span style="font-size: 14px; font-style: italic;">(Jackie Venson)</span></li>
+              <li style="margin-bottom: 8px;"><a href="https://www.youtube.com/watch?v=4eUJElS45gE&list=PL57PGcbA2-MzBuNXgXJ9eis2AbcjGGgza" target="_blank" rel="noopener" class="setlist-link"><strong>Mustang Sally</strong></a> <span style="font-size: 14px; font-style: italic;">(Wilson Pickett)</span></li>
+              <li style="margin-bottom: 8px;"><strong style="color: var(--text)">One Step Forward</strong></li>
               <li style="margin-bottom: 8px;"><strong style="color: var(--text)">Walking by Myself</strong> <span style="font-size: 14px; font-style: italic;">(Gary Moore / Jimmy Rogers)</span></li>
               <li style="margin-bottom: 8px;"><strong style="color: var(--text)">Take your Time</strong></li>
               <li style="margin-bottom: 8px;"><strong style="color: var(--text)">La Grange</strong> <span style="font-size: 14px; font-style: italic;">(ZZ Top)</span></li>
@@ -261,21 +259,6 @@
               <li style="margin-bottom: 8px;"><strong style="color: var(--text)">Sweet Home Chicago</strong> <span style="font-size: 14px; font-style: italic;">(Robert Johnson / Blues Brothers)</span></li>
             </ul>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MUSIC (YouTube Embed) -->
-    <section id="musik" class="wrap">
-      <h2 class="section-title">Musik</h2>
-      <div class="embeds">
-        <div class="embed card video-container">
-          <iframe 
-            src="https://www.youtube.com/embed/videoseries?list=PL57PGcbA2-MzBuNXgXJ9eis2AbcjGGgza" 
-            title="Shed House Band YouTube Playlist" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-          </iframe>
         </div>
       </div>
     </section>
@@ -368,6 +351,7 @@
   <footer>
     <div class="wrap">
       <div class="socials">
+        <a href="https://instagram.com" rel="noopener" target="_blank">Instagram</a>
         <a href="https://youtube.com/playlist?list=PL57PGcbA2-MzBuNXgXJ9eis2AbcjGGgza" rel="noopener" target="_blank">YouTube</a>
         <a href="mailto:kontakt@shedhouseband.ch">kontakt@shedhouseband.ch</a>
       </div>

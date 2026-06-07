@@ -95,6 +95,8 @@
     /* Music embeds */
     .embeds { display: grid; gap: 18px; }
     .embed { overflow: hidden; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: #15100c; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
     /* Shows */
     .shows table { width: 100%; border-collapse: collapse; }
@@ -191,6 +193,7 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero wrap">
       <img class="hero-logo" src="media/logo-shed-house-band.jpg" alt="Shed House Band Logo" />
       <h1>Shed House Band</h1>
@@ -198,6 +201,7 @@
       <button class="cta" onclick="document.getElementById('musik').scrollIntoView({behavior:'smooth'})">Jetzt reinhören ▸</button>
     </section>
 
+    <!-- ABOUT -->
     <section class="wrap" id="about">
       <div class="about">
         <div>
@@ -209,18 +213,20 @@
       </div>
     </section>
 
+    <!-- BAND -->
     <section class="wrap" id="band">
       <h2 class="section-title">Mitglieder</h2>
       <div class="grid cols-3">
-        <div class="card p-16"><strong>Bernhard Lüthi</strong><br><span style="color:var(--muted)">Piano & Hammond</span></div>
+        <div class="card p-16"><strong>Bernhard Lüthi</strong><br><span style="color:var(--muted)">Piano &amp; Hammond</span></div>
         <div class="card p-16"><strong>Peter Knüsel</strong><br><span style="color:var(--muted)">Bass</span></div>
         <div class="card p-16"><strong>Mi Schroeder</strong><br><span style="color:var(--muted)">Schlagzeug</span></div>
         <div class="card p-16"><strong>Pat Matteo</strong><br><span style="color:var(--muted)">Gitarre</span></div>
-        <div class="card p-16"><strong>Thomas Bräuer</strong><br><span style="color:var(--muted)">Gesang & Gitarre</span></div>
+        <div class="card p-16"><strong>Thomas Bräuer</strong><br><span style="color:var(--muted)">Gesang &amp; Gitarre</span></div>
         <div class="card p-16"><strong>Severine Bräuer</strong><br><span style="color:var(--muted)">Gesang</span></div>
       </div>
     </section>
 
+    <!-- SETLISTE -->
     <section class="wrap" id="setliste">
       <h2 class="section-title">Set-Liste (Auszug)</h2>
       <div class="card p-16">
@@ -259,20 +265,22 @@
       </div>
     </section>
 
+    <!-- MUSIC (YouTube Embed) -->
     <section id="musik" class="wrap">
       <h2 class="section-title">Musik</h2>
       <div class="embeds">
-        <div class="embed card">
-          <iframe
-            style="border-radius:12px"
-            src="https://open.spotify.com/embed/playlist/70eXlibWuS7YEKNHgUdSlM?utm_source=generator"
-            width="100%" height="352" frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy" title="Spotify Playlist Shed House Band"></iframe>
+        <div class="embed card video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/videoseries?list=HIER_DEINE_PLAYLIST_ID_EINSETZEN" 
+            title="Shed House Band YouTube Playlist" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
     </section>
 
+    <!-- SHOWS -->
     <section id="termine" class="wrap shows">
       <h2 class="section-title">Termine</h2>
       <div class="card p-16">
@@ -296,13 +304,14 @@
       </div>
     </section>
 
+    <!-- GALLERY with Lightbox -->
     <section id="galerie" class="wrap">
       <h2 class="section-title">Galerie</h2>
       <div class="gallery" id="gallery">
         <a class="thumb" data-index="0"><img src="media/rehearsal-01.jpg" alt="Probe – Akustiksession"></a>
         <a class="thumb" data-index="1"><img src="media/rehearsal-02.jpg" alt="Probe – Akustik mit Telecaster"></a>
         <a class="thumb" data-index="2"><img src="media/rehearsal-03.jpg" alt="Gitarrist mit Telecaster"></a>
-        <a class="thumb" data-index="3"><img src="media/rehearsal-04.jpg" alt="Rhythmusgruppe – Drums & Bass"></a>
+        <a class="thumb" data-index="3"><img src="media/rehearsal-04.jpg" alt="Rhythmusgruppe – Drums &amp; Bass"></a>
         <a class="thumb" data-index="4"><img src="media/rehearsal-05.jpg" alt="Gitarrist im Studio"></a>
         <a class="thumb" data-index="5"><img src="media/rehearsal-06.jpg" alt="Keys – Hammond/MP7"></a>
         <a class="thumb" data-index="6"><img src="media/rehearsal-07.jpg" alt="Keys in Aktion"></a>
@@ -317,8 +326,9 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="kontakt" class="wrap contact">
-      <h2 class="section-title">Kontakt & Booking</h2>
+      <h2 class="section-title">Kontakt &amp; Booking</h2>
       <div class="card">
         <form
           class="grid"
@@ -340,6 +350,7 @@
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
 
+          <!-- optional: subject für Formspree -->
           <input type="hidden" name="_subject" value="Neue Booking-Anfrage über shedhouseband.ch" />
 
           <div>
@@ -358,8 +369,7 @@
     <div class="wrap">
       <div class="socials">
         <a href="https://instagram.com" rel="noopener" target="_blank">Instagram</a>
-        <a href="https://youtube.com" rel="noopener" target="_blank">YouTube</a>
-        <a href="https://open.spotify.com" rel="noopener" target="_blank">Spotify</a>
+        <a href="https://youtube.com/playlist?list=HIER_DEINE_PLAYLIST_ID_EINSETZEN" rel="noopener" target="_blank">YouTube</a>
         <a href="mailto:kontakt@shedhouseband.ch">kontakt@shedhouseband.ch</a>
       </div>
       <p style="margin-top:14px">© <span id="year"></span> Shed House Band • Alle Rechte vorbehalten.</p>
